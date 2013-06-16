@@ -10,11 +10,16 @@ gem 'pg', '0.15.1'
 group :development, :test do
 	# gem 'sqlite3', '1.3.7'
 	gem 'rspec-rails', '2.13.1'
+	gem 'guard-rspec', '2.5.0'
+	gem 'spork-rails', github: 'railstutorial/spork-rails'
+	gem 'guard-spork', '1.5.0'
+	gem 'childprocess', '0.3.9'
 end
 
 group :test do
 	gem 'selenium-webdriver', '2.0.0'
 	gem 'capybara', '2.1.0'
+	gem 'growl', '1.0.3'
 end
 
 # Use SCSS for stylesheets
