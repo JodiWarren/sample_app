@@ -3,10 +3,12 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc2'
+gem 'pg', '0.15.1'
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3', '1.3.7'
+	# gem 'sqlite3', '1.3.7'
 	gem 'rspec-rails', '2.13.1'
 end
 
@@ -41,9 +43,9 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-group :production do
-	gem 'pg', '0.15.1'
-end
+# group :production do
+	# gem 'pg', '0.15.1'
+# end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
