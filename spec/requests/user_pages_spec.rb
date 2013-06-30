@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe "User pages" do
+	let(:user) { FactoryGirl.create(:user) }
 	describe "profile page" do
-		let(:user) { FactoryGirl.create(:user) }
 		before { visit user_path(user) }
 
 		it { should have_content(user.name) }
@@ -61,7 +61,7 @@ describe "User pages" do
 
 				it { should have_link('Sign out') }
 				it { should have_title(user.name) }
-				it { should have_selector('div.alert.alert-success', text: 'Welcome to the Sample App!') }
+				it { should have_success_message('Welcome to the Sample App!') }
 			end
 		end
 	end
