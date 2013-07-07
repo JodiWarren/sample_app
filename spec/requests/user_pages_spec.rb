@@ -68,6 +68,13 @@ describe "User pages" do
 			it { should have_content(user.microposts.count) }
 		end
 
+		# describe "pagination" do
+		# 	before do
+		# 		50.times { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+		# 	end
+		# 	it { should have_link("Next →")}
+		# end
+
 	end
 
 	subject { page }

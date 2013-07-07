@@ -5,10 +5,11 @@ ruby '2.0.0'
 gem 'rails', '4.0.0.rc2'
 gem 'pg', '0.15.1'
 gem 'bootstrap-sass'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
@@ -45,6 +46,7 @@ gem 'coffee-rails', '4.0.0'
 gem 'jquery-rails', '2.2.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-turbolinks'
 gem 'turbolinks', '1.1.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
