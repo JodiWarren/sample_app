@@ -2,9 +2,11 @@ class UsersController < ApplicationController
 	before_action :signed_in_user, 	only: [:index, :edit, :update, :destroy]
 	before_action :correct_user, 	only: [:edit, :update]
 	before_action :admin_user, 		only: :destroy
+	# before_action :signed_out_user, only: [:new, :create]
 
 	def show
 		@user = User.find(params[:id])
+		@microposts = @user.microposts.paginate(page: params[:page])
 	end
 
 	def index
@@ -54,14 +56,6 @@ class UsersController < ApplicationController
 
 		# Before filters
 
-		def signed_in_user
-			unless signed_in?
-				store_location
-				flash[:notice] = "Please sign in."
-				redirect_to signin_url
-			end
-		end
-
 		def correct_user
 			@user = User.find(params[:id])
 			redirect_to(root_path) unless current_user?(@user)
@@ -70,4 +64,10 @@ class UsersController < ApplicationController
 		def admin_user
 			redirect_to(root_path) unless current_user.admin?
 		end
+
+		# def signed_out_user
+		# 	if current_user?(@user)
+		# 		redirect_to(root_path)
+		# 	end
+		# end
 end
